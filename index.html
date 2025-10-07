@@ -1,105 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TradeMind Funding</title>
-<style>
-  body { font-family: Arial, sans-serif; margin:0; background:#e6f0ff; color:#0b2340; }
-  header { background: #0047ab; color: #fff; padding: 20px; text-align:center; }
-  header h1 { margin:0; }
-  .container { max-width: 900px; margin:20px auto; padding:10px; }
-  .cards { display: flex; flex-wrap: wrap; gap:15px; justify-content: center; }
-  .card { background: #fff; border-radius: 12px; padding: 20px; width: 200px; box-shadow:0 6px 15px rgba(0,0,0,.1); text-align:center; cursor:pointer; transition: transform .2s; }
-  .card:hover { transform: scale(1.05); }
-  .card h3 { margin-top:0; color:#0047ab; }
-  .card span { font-size:18px; color:#ffcc00; font-weight:bold; }
-  .btn { display:inline-block; background:#ffcc00; color:#0047ab; padding:10px 18px; border-radius:8px; text-decoration:none; margin-top:10px; font-weight:bold; cursor:pointer; }
-  .form-step { display:none; background:#fff; padding:20px; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,.1); margin-top:20px; }
-  .form-step.active { display:block; }
-  label { display:block; margin:10px 0 5px; }
-  input, select { width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeMind Funding</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header>
+        <h1>TradeMind Funding</h1>
+        <nav>
+            <a href="index.html">Acasă</a>
+            <a href="conturi.html">Conturi</a>
+            <a href="form.html">Contact</a>
+        </nav>
+    </header>
 
-<header>
-  <h1>TradeMind Funding</h1>
-  <p>Finanțare conturi Forex pentru traderi ambițioși</p>
-</header>
+    <section class="hero">
+        <h2>Finanțare pentru traderi</h2>
+        <p>Alege contul tău și începe să tranzacționezi cu capital real.</p>
+        <a href="conturi.html" class="btn">Vezi conturi</a>
+    </section>
 
-<div class="container">
-  <h2>Conturi disponibile</h2>
-  <div class="cards">
-    <div class="card" data-value="5000$" data-price="20">
-      <h3>Cont 5k$</h3>
-      <span>20$</span>
-      <div>Alege</div>
-    </div>
-    <div class="card" data-value="10.000$" data-price="40">
-      <h3>Cont 10k$</h3>
-      <span>40$</span>
-      <div>Alege</div>
-    </div>
-    <div class="card" data-value="50.000$" data-price="80">
-      <h3>Cont 50k$</h3>
-      <span>80$</span>
-      <div>Alege</div>
-    </div>
-    <div class="card" data-value="100.000$" data-price="120">
-      <h3>Cont 100k$</h3>
-      <span>120$</span>
-      <div>Alege</div>
-    </div>
-  </div>
-
-  <!-- Formular în doi pași -->
-  <div class="form-step step1 active">
-    <h2>Pasul 1: Confirmă contul</h2>
-    <p>Cont selectat: <span id="selected-account">---</span></p>
-    <button class="btn" id="nextStep">Următorul pas</button>
-  </div>
-
-  <div class="form-step step2">
-    <h2>Pasul 2: Completează datele</h2>
-    <form action="https://docs.google.com/forms/d/e/ID_FORM/viewform?usp=pp_url" method="get" target="_blank">
-      <input type="hidden" name="entry.Cont" id="form-account">
-      <label>Nume complet</label>
-      <input name="entry.123" required>
-      <label>Email</label>
-      <input type="email" name="entry.456" required>
-      <label>Comentarii / experiență trading</label>
-      <textarea name="entry.789"></textarea>
-      <button type="submit" class="btn">Trimite aplicația</button>
-    </form>
-  </div>
-
-</div>
-
-<script>
-  const cards = document.querySelectorAll('.card');
-  const selectedAccount = document.getElementById('selected-account');
-  const formAccount = document.getElementById('form-account');
-  const step1 = document.querySelector('.step1');
-  const step2 = document.querySelector('.step2');
-  const nextStepBtn = document.getElementById('nextStep');
-
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const value = card.dataset.value;
-      const price = card.dataset.price;
-      selectedAccount.textContent = value + ' - ' + price + '$';
-      formAccount.value = value + ' - ' + price + '$';
-      step1.classList.add('active');
-    });
-  });
-
-  nextStepBtn.addEventListener('click', () => {
-    step1.classList.remove('active');
-    step2.classList.add('active');
-  });
-</script>
-
+    <footer>
+        <p>&copy; 2025 TradeMind Funding</p>
+    </footer>
 </body>
 </html>
-
