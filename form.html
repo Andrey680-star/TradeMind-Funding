@@ -1,3 +1,42 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="js/script.js"></script>
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formular cont - TradeMind Funding</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>TradeMind Funding</h1>
+        <nav>
+            <a href="index.html">Acasă</a>
+            <a href="conturi.html">Conturi</a>
+            <a href="form.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="form-section">
+        <h2 id="titlu-cont">Formular cont</h2>
+        <form id="formular">
+            <label for="nume">Nume complet:</label>
+            <input type="text" id="nume" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="telefon">Telefon:</label>
+            <input type="text" id="telefon" required>
+
+            <input type="hidden" id="cont-selectat" name="cont">
+            <button type="submit" class="btn">Trimite</button>
+        </form>
+        <p id="mesaj"></p>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
 
